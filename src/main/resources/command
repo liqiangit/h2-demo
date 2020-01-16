@@ -1,0 +1,1 @@
+java -XX:MaxDirectMemorySize=40G -jar h2-demo-1.0.0.DEVELOPMENT.jar --server.port=28080 --count=100000000

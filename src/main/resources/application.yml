@@ -1,0 +1,23 @@
+server:
+  port: 18080
+
+#count: 100000000
+batch1: 100000
+batch2: 1000
+count: 100_0000
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:nioMemFS:test
+    username:
+    password:
+    schema: classpath:db/schema2.sql
+#    data: classpath:db/data.sql
+  h2:
+    console:
+      settings:
+        web-allow-other: true
+        trace: true
+      path: /h2-console
+      enabled: true
