@@ -1,8 +1,15 @@
 package com.klovis.demo.h2.mapper;
 
-import com.klovis.demo.h2.entity.GroupDetail;
-import org.apache.ibatis.annotations.*;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Component;
+
+import com.klovis.demo.h2.entity.GroupDetail;
 
 @Component
 @Mapper
@@ -43,7 +50,7 @@ public interface GroupDetailMapper {
 	 * @return
 	 */
 	@Select("SELECT * FROM GROUPDETAIL where CHN=#{chn} AND LIBRARYNAME1=#{libraryname1}")
-	GroupDetail selectByLibraryName1(GroupDetail detail);
+	List<GroupDetail> selectByLibraryName1(GroupDetail detail);
 
 	/**
 	 * 查询二级库明细
@@ -52,7 +59,7 @@ public interface GroupDetailMapper {
 	 * @return
 	 */
 	@Select("SELECT * FROM GROUPDETAIL where CHN=#{chn} AND LIBRARYNAME1=#{libraryname1} AND LIBRARYNAME2=#{libraryname2}")
-	GroupDetail selectByLibraryName2(GroupDetail detail);
+	List<GroupDetail> selectByLibraryName2(GroupDetail detail);
 
 	/**
 	 * 查询人员，返回多个特征
